@@ -1,8 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import logo from './logo.svg'
+import './App.css'
 
-import FabricWhiteBoard from 'fabric-whiteboard';
+import WhiteBoard from '../node_modules/fabric-whiteboard/lib'
 
 function App() {
   return (
@@ -20,9 +20,10 @@ function App() {
         >
           Learn React
         </a>
+        <WhiteBoard />
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
