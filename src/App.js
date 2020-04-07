@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 
-import WhiteBoard from './components'
+import WhiteBoard from '../node_modules/fabric-whiteboard/lib'
 
 function App() {
   return (
