@@ -8,3 +8,15 @@
   justify-content: center;
   align-items: center;
 }
+
+.toolbar {
+  margin: 12px 0px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.toolbar-button {
+  margin: 0px 12px;
+}
