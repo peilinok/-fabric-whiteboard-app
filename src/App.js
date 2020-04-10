@@ -14,6 +14,7 @@ export default class App extends Component {
       width: '600px',
       height: '600px',
       brushColor: '#f44336',
+      brushThickness: 2,
     }
 
     this.calcBoundsSize = this.calcBoundsSize.bind(this)
@@ -21,6 +22,9 @@ export default class App extends Component {
 
     this.handleOnModeClick = this.handleOnModeClick.bind(this)
     this.handleOnBrushColorChange = this.handleOnBrushColorChange.bind(this)
+    this.handleOnBrushThicknessChange = this.handleOnBrushThicknessChange.bind(
+      this
+    )
   }
 
   componentDidMount() {
@@ -34,7 +38,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { mode, width, height, brushColor } = this.state
+    const { mode, width, height, brushColor, brushThickness } = this.state
 
     return (
       <div className="App" id="App">
@@ -55,7 +59,9 @@ export default class App extends Component {
               '#3f51b5',
               '#2196f3',
             ]}
+            brushThickness={brushThickness}
             onBrushColorChange={this.handleOnBrushColorChange}
+            onBrushThicknessChange={this.handleOnBrushThicknessChange}
           />
         </div>
 
@@ -129,6 +135,12 @@ export default class App extends Component {
     console.warn(color)
     this.setState({
       brushColor: color.hex,
+    })
+  }
+
+  handleOnBrushThicknessChange(thickness) {
+    this.setState({
+      brushThickness: thickness,
     })
   }
 }
