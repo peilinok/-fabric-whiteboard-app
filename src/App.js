@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+
+import objects from './objects'
 import './App.css'
 
 import WhiteBoard, {
   getWhiteBoardData,
   loadWhiteBoardData,
+  addWhiteBoardObject,
 } from 'fabric-whiteboard'
 
 export default class App extends Component {
@@ -25,6 +28,7 @@ export default class App extends Component {
     this.handleOnBrushThicknessChange = this.handleOnBrushThicknessChange.bind(
       this
     )
+    this.handleOnObjectAdded = this.handleOnObjectAdded.bind(this)
   }
 
   componentDidMount() {
@@ -62,6 +66,7 @@ export default class App extends Component {
             brushThickness={brushThickness}
             onBrushColorChange={this.handleOnBrushColorChange}
             onBrushThicknessChange={this.handleOnBrushThicknessChange}
+            onObjectAdded={this.handleOnObjectAdded}
           />
         </div>
 
@@ -99,6 +104,89 @@ export default class App extends Component {
             Set
           </button>
         </div>
+
+        <div>
+          <button
+            className="toolbar-button"
+            onClick={() => {
+              addWhiteBoardObject(objects.pen)
+            }}
+          >
+            Add Pen
+          </button>
+
+          <button
+            className="toolbar-button"
+            onClick={() => {
+              addWhiteBoardObject(objects.line)
+            }}
+          >
+            Add Line
+          </button>
+
+          <button
+            className="toolbar-button"
+            onClick={() => {
+              addWhiteBoardObject(objects.dotLine)
+            }}
+          >
+            Add DotLine
+          </button>
+
+          <button
+            className="toolbar-button"
+            onClick={() => {
+              addWhiteBoardObject(objects.arrow)
+            }}
+          >
+            Add Arrow
+          </button>
+
+          <button
+            className="toolbar-button"
+            onClick={() => {
+              addWhiteBoardObject(objects.text)
+            }}
+          >
+            Add Text
+          </button>
+
+          <button
+            className="toolbar-button"
+            onClick={() => {
+              addWhiteBoardObject(objects.rectangle)
+            }}
+          >
+            Add Rectangle
+          </button>
+
+          <button
+            className="toolbar-button"
+            onClick={() => {
+              addWhiteBoardObject(objects.triangle)
+            }}
+          >
+            Add Triangle
+          </button>
+
+          <button
+            className="toolbar-button"
+            onClick={() => {
+              addWhiteBoardObject(objects.circle)
+            }}
+          >
+            Add Circle
+          </button>
+
+          <button
+            className="toolbar-button"
+            onClick={() => {
+              addWhiteBoardObject(objects.ellipse)
+            }}
+          >
+            Add Ellipse
+          </button>
+        </div>
       </div>
     )
   }
@@ -132,7 +220,6 @@ export default class App extends Component {
   }
 
   handleOnBrushColorChange(color) {
-    console.warn(color)
     this.setState({
       brushColor: color.hex,
     })
@@ -142,5 +229,10 @@ export default class App extends Component {
     this.setState({
       brushThickness: thickness,
     })
+  }
+
+  handleOnObjectAdded(object) {
+    console.info('new object', JSON.stringify(object))
+    console.info('try pase', JSON.parse(JSON.stringify(object)))
   }
 }
