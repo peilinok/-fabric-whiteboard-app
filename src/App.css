@@ -9,6 +9,14 @@
   align-items: center;
 }
 
+.whiteboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
 
 .toolbar {
   margin: 12px 0px;
