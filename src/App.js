@@ -68,10 +68,12 @@ export default class App extends Component {
             width={width}
             height={height}
             showToolbar={true}
+            enableBoard={true}
             enableToolbar={true}
             showBoard={true}
             mode={mode}
             onModeClick={this.handleOnModeClick}
+            fontSize={22}
             brushColor={brushColor}
             brushColors={[
               '#f44336',
@@ -99,9 +101,11 @@ export default class App extends Component {
             width={width}
             height={height}
             showToolbar={true}
+            enableBoard={false}
             enableToolbar={false}
             showBoard={true}
             mode={mode}
+            fontSize={22}
             brushColor={brushColor}
             brushColors={[
               '#f44336',
@@ -141,6 +145,9 @@ export default class App extends Component {
                 domTextarea.value !== ''
               ) {
                 loadWhiteBoardData(this.refRight, domTextarea.value, (e) => {
+                  console.info('load whiteboard data succed', e)
+                })
+                loadWhiteBoardData(this.refLeft, domTextarea.value, (e) => {
                   console.info('load whiteboard data succed', e)
                 })
               }
