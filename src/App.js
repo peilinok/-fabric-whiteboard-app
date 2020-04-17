@@ -101,7 +101,7 @@ export default class App extends Component {
             width={width}
             height={height}
             showToolbar={true}
-            enableBoard={false}
+            enableBoard={true}
             enableToolbar={false}
             showBoard={true}
             mode={mode}
@@ -297,7 +297,7 @@ export default class App extends Component {
   }
 
   handleOnObjectsModified(object) {
-    modifyWhiteBoardObjects(this.refRight, object)
+    modifyWhiteBoardObjects(this.refRight, object, true)
   }
 
   handleOnObjectsRemoved(objects) {
