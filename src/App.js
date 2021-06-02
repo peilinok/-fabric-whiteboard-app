@@ -34,9 +34,8 @@ export default class App extends Component {
 
     this.handleOnModeClick = this.handleOnModeClick.bind(this)
     this.handleOnBrushColorChange = this.handleOnBrushColorChange.bind(this)
-    this.handleOnBrushThicknessChange = this.handleOnBrushThicknessChange.bind(
-      this
-    )
+    this.handleOnBrushThicknessChange =
+      this.handleOnBrushThicknessChange.bind(this)
     this.handleOnObjectAdded = this.handleOnObjectAdded.bind(this)
     this.handleOnObjectsModified = this.handleOnObjectsModified.bind(this)
     this.handleOnObjectsRemoved = this.handleOnObjectsRemoved.bind(this)
